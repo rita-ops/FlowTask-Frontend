@@ -1,0 +1,9 @@
+<div>
+  <button (click)="create.emit()">+ New Project</button>
+
+  <div *ngFor="let p of projects">
+    <h3 (click)="open.emit(p.projectId)">
+      {{ p.projectName }}
+    </h3>
+  </div>
+</div>

@@ -1,0 +1,182 @@
+.navbar {
+  background: #ffffff !important;
+  padding: 0.8rem 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #e2e8f0;
+  min-height: 64px;
+}
+
+.logo {
+  color: #3182ce;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.logo-link {
+  border: 0;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font: inherit;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.nav-links button {
+  border: 0;
+  background: transparent;
+  color: #64748b;
+  cursor: pointer;
+  font-weight: bold;
+  text-decoration: none;
+  margin: 0 15px;
+}
+
+.nav-links button:disabled {
+  cursor: default;
+  opacity: 0.75;
+}
+
+.auth-buttons {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.btn-outline,
+.btn-filled {
+  padding: 8px 22px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.btn-outline {
+  background: #ffffff;
+  border: 1.5px solid #3182ce;
+  color: #3182ce;
+}
+
+.btn-filled {
+  background: #3182ce;
+  color: #ffffff;
+  border: 1.5px solid #3182ce;
+}
+
+
+.notification-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.notification-icon {
+  font-size: 22px;
+  cursor: pointer;
+  color: #3182ce;
+}
+
+.notification-badge {
+  position: absolute;
+  top: -8px;
+  right: -3px;
+  background: red;
+  color: white;
+  border-radius: 50%;
+  min-width: 20px;
+  height: 20px;
+  text-align: center;
+  line-height: 20px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.notification-dropdown {
+  position: absolute;
+  right: 0;
+  top: 35px;
+  width: 280px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  display: none;
+  z-index: 999;
+}
+
+.notification-wrapper:hover .notification-dropdown {
+  display: block;
+}
+
+.notif-item {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  text-decoration: none;
+  color: #333;
+  border: 0;
+  border-bottom: 1px solid #eee;
+  background: #ffffff;
+  text-align: left;
+  cursor: pointer;
+}
+
+.notif-item:hover {
+  background: #f5f7ff;
+}
+
+.empty-notif {
+  cursor: default;
+}
+
+.notif-red {
+  color: red;
+}
+
+.notif-yellow {
+  color: orange;
+}
+
+.notif-blue {
+  color: #2c7be5;
+}
+
+.due-warning {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin-left: 10px;
+  padding: 4px 8px;
+  border-radius: 20px;
+  background: #fff3cd;
+  color: #856404;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.due-warning i {
+  color: #f39c12;
+}
+
+.due-overdue {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin-left: 10px;
+  padding: 4px 8px;
+  border-radius: 20px;
+  background: #f8d7da;
+  color: #721c24;
+  font-size: 12px;
+  font-weight: 600;
+}

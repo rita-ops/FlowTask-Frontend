@@ -1,0 +1,60 @@
+<header class="navbar">
+
+  <div class="logo">
+    <button class="logo-link" (click)="showProjectsClick.emit()">
+      <i class="fa-solid fa-layer-group"></i> FlowTask
+    </button>
+  </div>
+
+  <nav class="nav-links">
+    <button (click)="showProjectsClick.emit()" [disabled]="!currentUser">Projects</button>
+    <button disabled>Tasks</button>
+    <button disabled>Dashboards</button>
+  </nav>
+
+  <div class="auth-buttons">
+
+    <div class="notification-wrapper" *ngIf="currentUser">
+      <i class="fa-solid fa-bell notification-icon"></i>
+
+      <span class="notification-badge" *ngIf="projectNotifications.length">
+        {{ projectNotifications.length }}
+      </span>
+
+      <div class="notification-dropdown">
+        <button
+          class="notif-item"
+          *ngFor="let p of projectNotifications"
+          (click)="openProjectClick.emit(p.projectId)">
+
+          <span [class]="notificationClass(p.daysRemaining)">
+            <i [class]="notificationIcon(p.daysRemaining)"></i>
+          </span>
+
+          {{ p.projectName }}
+        </button>
+      </div>
+    </div>
+
+    <!-- <button *ngIf="!currentUser" class="btn-outline">Login</button> -->
+
+<button *ngIf="!currentUser"
+        class="btn-outline"
+        (click)="loginClick.emit()">
+  Login
+</button>
+    <button *ngIf="currentUser"
+            class="btn-outline"
+            (click)="logoutClick.emit()">
+      Logout
+    </button>
+
+    <button *ngIf="isAdmin"
+            class="btn-filled"
+            (click)="showAdminClick.emit()">
+      Create User
+    </button>
+
+  </div>
+
+</header>

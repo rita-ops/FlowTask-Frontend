@@ -1,0 +1,23 @@
+<section class="projects-page">
+
+  <!-- LIST -->
+  <app-projects-list
+    *ngIf="!selectedProjectId && !showForm"
+    (open)="openProject($event)"
+    (create)="createProject()">
+  </app-projects-list>
+
+  <!-- DETAILS -->
+  <app-project-details
+    *ngIf="selectedProjectId"
+    [projectId]="selectedProjectId"
+    (back)="backToList()">
+  </app-project-details>
+
+  <!-- CREATE / EDIT -->
+  <app-project-form
+    *ngIf="showForm"
+    (cancel)="closeForm()">
+  </app-project-form>
+
+</section>

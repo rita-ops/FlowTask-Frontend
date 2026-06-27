@@ -1,0 +1,18 @@
+<section class="project-modal">
+
+  <h2>Create Project</h2>
+
+  <input placeholder="Name" [(ngModel)]="model.projectName" name="name">
+
+  <textarea placeholder="Description"
+            [(ngModel)]="model.description"
+            name="desc"></textarea>
+
+  <input type="date"
+         [(ngModel)]="model.dueDate"
+         name="date">
+
+  <button (click)="save()">Save</button>
+  <button (click)="cancel()">Cancel</button>
+
+</section>

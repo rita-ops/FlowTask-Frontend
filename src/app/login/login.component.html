@@ -1,0 +1,35 @@
+<div class="login-error-row">
+  <p class="error-message" *ngIf="errorMessage">{{ errorMessage }}</p>
+</div>
+
+<form class="login-card" (ngSubmit)="submit()">
+  <div class="login-header">
+    <h2>Login</h2>
+    <p>Please enter your details to sign in.</p>
+  </div>
+
+  <div class="form-body">
+    <div class="input-field">
+      <label>Username</label>
+      <input class="form-control-custom" name="username" [(ngModel)]="loginModel.username" placeholder="Enter your username" autocomplete="username" />
+    </div>
+
+    <div class="input-field">
+      <label>Password</label>
+      <div class="password-container">
+        <input class="form-control-custom" name="password" [(ngModel)]="loginModel.password" [type]="showPassword ? 'text' : 'password'" placeholder="Password" autocomplete="current-password" />
+        <i class="fa-solid password-toggle" [class.fa-eye]="!showPassword" [class.fa-eye-slash]="showPassword" (click)="showPassword = !showPassword"></i>
+      </div>
+    </div>
+
+    <div class="form-utilities">
+      <label class="checkbox-container">
+        <input type="checkbox" name="remember" />
+        <span>Remember me</span>
+      </label>
+      <a href="#" class="forgot-link">Forgot password?</a>
+    </div>
+
+    <button class="btn-submit" type="submit" [disabled]="isBusy">{{ isBusy ? 'Signing in...' : 'Sign In' }}</button>
+  </div>
+</form>

@@ -1,0 +1,24 @@
+.footer {
+  background: #1e293b;
+  color: #94a3b8;
+  padding: 10px 5%;
+  margin-top: auto;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.footer-nav {
+  display: flex;
+  gap: 16px;
+}
+
+.footer-nav a {
+  color: #cbd5e1;
+  text-decoration: none;
+}

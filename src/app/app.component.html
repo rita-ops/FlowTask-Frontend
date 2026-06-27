@@ -1,0 +1,48 @@
+<div class="page-shell">
+
+  <!-- <app-header
+    [currentUser]="currentUser"
+    (logoutClick)="logout()"
+    (showProjectsClick)="goProjects()"
+    (showAdminClick)="goAdmin()">
+  </app-header> -->
+
+  <!-- <app-header
+  [currentUser]="currentUser"
+  (showLoginClick)="goLogin()"
+  (logoutClick)="logout()"
+  (showProjectsClick)="goProjects()"
+  (showAdminClick)="goAdmin()">
+</app-header> -->
+
+<app-header
+  [currentUser]="currentUser"
+  [projectNotifications]="[]"
+  [isAdmin]="false"
+  (logoutClick)="logout()"
+  (showProjectsClick)="goProjects()"
+  (showAdminClick)="goAdmin()"
+  (loginClick)="currentUser = null">
+</app-header>
+
+  <main class="main-content">
+
+    <!-- LOGIN PAGE -->
+    <!-- <app-login
+      *ngIf="!currentUser"
+      (loginSubmit)="login($event)">
+    </app-login> -->
+
+    <app-login
+  *ngIf="!currentUser"
+  [errorMessage]="errorMessage"
+  (loginSubmit)="login($event)">
+</app-login>
+    <!-- AFTER LOGIN -->
+    <router-outlet *ngIf="currentUser"></router-outlet>
+
+  </main>
+
+  <app-footer></app-footer>
+
+</div>
